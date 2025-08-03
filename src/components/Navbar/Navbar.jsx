@@ -18,7 +18,13 @@ function Navbar({ theme, setTheme }) {
 
       <ul className="links">
         <li>
-          <NavLink to="/home" className={({ isActive }) => isActive ? "link active-link" : "link" }>Home</NavLink>
+          <NavLink to="/home" className={({ isActive }) => isActive ? "link active-link" : "link"}>Home</NavLink>
+        </li>
+        <li>
+          <NavLink to="/Products" className={({ isActive }) => isActive ? "link active-link" : "link"}>Products</NavLink>
+        </li>
+        <li>
+          <NavLink to="/About" className={({ isActive }) => isActive ? "link active-link" : "link"}>About</NavLink>
         </li>
       </ul>
 
