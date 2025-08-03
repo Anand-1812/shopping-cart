@@ -34,6 +34,10 @@
   color: var(--hover-accent);
 }
 
+.cartIcon {
+  cursor: pointer;
+}
+
 /* Theme Toggle */
 .cart-theme {
   display: flex;

@@ -22,7 +22,7 @@ function Navbar({ theme, setTheme }) {
       </ul>
 
       <div className="cart-theme">
-        <FaCartShopping />
+        <FaCartShopping className="cartIcon" />
         <p onClick={toggleTheme}>{toggleIcon}</p>
       </div>
     </div>
