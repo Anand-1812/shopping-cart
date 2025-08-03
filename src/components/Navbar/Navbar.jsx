@@ -1,5 +1,5 @@
 import { NavLink } from "react-router";
-import { FaCartShopping, FaM } from "react-icons/fa6";
+import { FaCartShopping } from "react-icons/fa6";
 import { GoSun } from "react-icons/go";
 import { FaMoon } from "react-icons/fa";
 import './Navbar.css';

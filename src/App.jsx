@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import Navbar from './components/Navbar/Navbar'
+import Navbar from './components/Navbar/Navbar';
 import { Outlet } from 'react-router';
-import Footer from './components/Navbar/Footer/Footer';
+import Footer from './components/Footer/Footer'
 
 function App() {
   const [theme, setTheme] = useState('light');
