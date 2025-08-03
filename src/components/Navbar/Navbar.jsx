@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { FaCartShopping, FaM } from "react-icons/fa6";
 import { GoSun } from "react-icons/go";
 import { FaMoon } from "react-icons/fa";
@@ -16,9 +17,9 @@ function Navbar({ theme, setTheme }) {
       <h1>Shopping Cart</h1>
 
       <ul className="links">
-        <li>Home</li>
-        <li>Products</li>
-        <li>About</li>
+        <li>
+          <NavLink to="/home" className={({ isActive }) => isActive ? "link active-link" : "link" }>Home</NavLink>
+        </li>
       </ul>
 
       <div className="cart-theme">

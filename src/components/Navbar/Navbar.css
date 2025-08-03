@@ -1,3 +1,20 @@
+:root {
+  --primary-accent: #6c5ce7;
+  --hover-accent: #a29bfe;
+  --dark-accent: #1e1e2f;
+  --dark-text: #f5f5f5;
+  --active-light: #ffeaa7;
+  --active-dark: #ffd6e8;
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Navbar */
 .navbar {
   padding: 1rem 4rem;
   width: 100%;
@@ -13,7 +30,6 @@
   font-weight: bold;
 }
 
-/* Links */
 .links {
   margin-right: 2rem;
   flex: 1;
@@ -24,14 +40,22 @@
   gap: 1.5rem;
 }
 
-.links li {
+.link {
+  text-decoration: none;
   font-size: 1.2rem;
-  cursor: pointer;
+  color: white;
   transition: color 0.3s ease;
 }
 
-.links li:hover {
+.link:hover {
   color: var(--hover-accent);
+}
+
+.active-link {
+  font-weight: bold;
+  color: var(--active-light);
+  text-decoration: none;
+  border-bottom: none;
 }
 
 .cartIcon {
@@ -50,12 +74,20 @@
   cursor: pointer;
 }
 
-/* Dark Mode */
+/* DARK MODE */
 .dark .navbar {
-  background-color: var(--dark-accent);
+  background-color: var(--primary-accent));
   color: var(--dark-text);
 }
 
-.dark .links li:hover {
+.dark .link {
+  color: var(--dark-text);
+}
+
+.dark .link:hover {
   color: #dcd6f7;
+}
+
+.dark .active-link {
+  color: var(--active-dark);
 }
