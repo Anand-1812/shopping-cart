@@ -1,0 +1,57 @@
+.navbar {
+  padding: 1rem 4rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--primary-accent);
+  color: white;
+}
+
+.navbar h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Links */
+.links {
+  margin-right: 2rem;
+  flex: 1;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.links li {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.links li:hover {
+  color: var(--hover-accent);
+}
+
+/* Theme Toggle */
+.cart-theme {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.cart-theme p {
+  cursor: pointer;
+}
+
+/* Dark Mode */
+.dark .navbar {
+  background-color: var(--dark-accent);
+  color: var(--dark-text);
+}
+
+.dark .links li:hover {
+  color: #dcd6f7;
+}
