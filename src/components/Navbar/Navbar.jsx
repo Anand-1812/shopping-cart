@@ -29,7 +29,7 @@ function Navbar({ theme, setTheme }) {
       </ul>
 
       <div className="cart-theme">
-        <FaCartShopping className="cartIcon" />
+        <NavLink to="/cart" className={({ isActive }) => isActive ? "link active-link" : "link" }><FaCartShopping className="cartIcon" /></NavLink>
         <p onClick={toggleTheme}>{toggleIcon}</p>
       </div>
     </div>
