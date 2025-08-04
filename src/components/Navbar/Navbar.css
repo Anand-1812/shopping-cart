@@ -1,6 +1,6 @@
 :root {
-  --primary-accent: #6c5ce7;
-  --hover-accent: #a29bfe;
+  --primary-accent: #76ABAE;
+  --hover-accent: #555879;
   --dark-accent: #1e1e2f;
   --dark-text: #f5f5f5;
   --active-light: #ffeaa7;
@@ -76,7 +76,7 @@
 
 /* DARK MODE */
 .dark .navbar {
-  background-color: var(--primary-accent));
+  background-color: var(--primary-accent);
   color: var(--dark-text);
 }
 
