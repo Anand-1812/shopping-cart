@@ -15,16 +15,25 @@ function GetProduct() {
   }
 
   return (
-    <div className="sample-product">
-      <img src={product[1].image} alt={product[1].title} />
-      <h3>{product[1].title}</h3>
-      <p>${product[1].price}</p>
-    </div>
+    <>
+      <div className="sample-product">
+        <img src={product[1].image} alt={product[1].title} />
+        <p>${product[1].price}</p>
+      </div>
+      <div className="sample-product">
+        <img src={product[2].image} alt={product[2].title} />
+        <p>${product[2].price}</p>
+      </div>
+    </>
   );
 }
+
 export default function Home() {
   return (
-    <div className='product'>
+    <div className='home'>
+      <div className='about-site'>
+        <p>Welcome to the shopping cart, where you can buy trendy clothes at a decent prizes</p>
+      </div>
       {<GetProduct />}
     </div>
   );

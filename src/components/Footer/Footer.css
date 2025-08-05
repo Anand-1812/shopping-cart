@@ -1,16 +1,23 @@
 .footer {
-  padding: 1rem 0;
+  width: 100%;
+  padding: 1.5rem 2rem;
   text-align: center;
   background-color: #eaeaea;
-  font-weight: 500;
-  bottom: 0;
-  left: 0;
   color: #333;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-top: 1px solid #ccc;
+  margin-top: auto;
 }
 
-/* Dark Mode */
+.footer {
+  color: inherit;
+}
+
+/* Dark Mode  */
 .dark .footer {
-  background-color: #111;
-  color: #f5f5f5;
+  background-color: var(--dark-accent, #1a1a1a);
+  color: var(--dark-text, #f5f5f5);
+  border-top: 1px solid #333;
 }
-
