@@ -4,7 +4,7 @@
   align-items: center;
   gap: 1.5rem;
   padding: 2rem;
-  min-height: 80vh;
+  min-height: 85vh;
   background-color: #f9f9f9;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
