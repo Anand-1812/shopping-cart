@@ -10,7 +10,7 @@ export default function About() {
       <p className="about-description">
         A big React project to learn about React, routing, and component styling.
       </p>
-      <p className="about-footer">
+      <p className="about-footer" data-testid="about-footer">
         This is the final project of React from <span className="highlight">The Odin Project</span>.
       </p>
     </section>
