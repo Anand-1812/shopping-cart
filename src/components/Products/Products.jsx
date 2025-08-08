@@ -1,7 +1,6 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 
-
-export default function Product() {
+function FetchProduct() {
   const [product, setProduct] = useState([]);
 
   useEffect(() => {
@@ -10,5 +9,26 @@ export default function Product() {
       .then(data => setProduct(data));
   }, []);
 
+  if (product.length === 0) {
+    return <p>Loading product...</p>;
+  }
 
+  console.log(`Number of products: ${product.length}`)
+
+  return (
+    <div className="products">
+      {product.map((item) => (
+        <img key={item.id} src={item.image} alt={item.title} />
+      ))}
+    </div>
+  );
 }
+
+export default function Products() {
+  return (
+    <div className="product">
+      <FetchProduct />
+    </div>
+  );
+}
+
