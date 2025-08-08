@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import './Products.css';
 
 function FetchProduct() {
   const [product, setProduct] = useState([]);
@@ -18,7 +19,11 @@ function FetchProduct() {
   return (
     <div className="products">
       {product.map((item) => (
-        <img key={item.id} src={item.image} alt={item.title} />
+        <div className="product-info">
+          <img key={item.id} src={item.image} alt={item.title} />
+          <p>${item.price}</p>
+          <button className="cart-btn">Add to cart</button>
+        </div>
       ))}
     </div>
   );
@@ -26,9 +31,7 @@ function FetchProduct() {
 
 export default function Products() {
   return (
-    <div className="product">
-      <FetchProduct />
-    </div>
+    <FetchProduct />
   );
 }
 
