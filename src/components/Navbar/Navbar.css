@@ -48,7 +48,7 @@
 }
 
 .link:hover {
-  color: var(--hover-accent);
+  color: #f0ebd8;
 }
 
 .active-link {
@@ -86,7 +86,7 @@
 }
 
 .dark .link:hover {
-  color: #dcd6f7;
+  color: #f0ebd8;
 }
 
 .dark .active-link {

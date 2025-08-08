@@ -16,7 +16,7 @@
 }
 
 .dark .footer {
-  background-color: var(--dark-card);
+  background-color: var(--primary-accent);
   color: var(--dark-text);
   border-top: 1px solid #333;
 }
