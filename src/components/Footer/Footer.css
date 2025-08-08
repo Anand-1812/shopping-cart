@@ -3,8 +3,8 @@
   width: 100%;
   padding: 1.5rem 2rem;
   text-align: center;
-  background-color: #34699A;
-  color: #333;
+  background-color: var(--primary);
+  color: var(--light-text);
   font-weight: 500;
   font-size: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -12,13 +12,9 @@
   margin-top: auto;
 }
 
-.footer {
-  color: inherit;
-}
-
-/* Dark Mode  */
 .dark .footer {
-  background-color: #34699A;
-  color: var(--dark-text, #f5f5f5);
+  background-color: var(--dark-card);
+  color: var(--dark-text);
   border-top: 1px solid #333;
 }
+

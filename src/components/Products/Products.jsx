@@ -21,7 +21,7 @@ function FetchProduct() {
       {product.map((item) => (
         <div className="product-info">
           <img key={item.id} src={item.image} alt={item.title} />
-          <p>${item.price}</p>
+          <p className="item-price">${item.price}</p>
           <button className="cart-btn">Add to cart</button>
         </div>
       ))}

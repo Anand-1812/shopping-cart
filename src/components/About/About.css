@@ -1,21 +1,21 @@
 .about-container {
   height: 85vh;
-  padding: 1rem 4rem;
+  padding: 2rem 4rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   text-align: center;
   background-color: var(--light-bg);
   color: var(--light-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .about-header {
   display: flex;
-  /* flex-direction: column; */
   align-items: center;
-  gap: 1.1rem;
+  gap: 0.5rem;
 }
 
 .about-title {
@@ -28,18 +28,20 @@
   font-size: 1.5rem;
   font-weight: 500;
   margin-top: 0.3rem;
-  color: inherit;
+  color: var(--light-text);
 }
 
 .about-description {
   font-size: 1.2rem;
   max-width: 700px;
   line-height: 1.6;
+  color: var(--light-text);
 }
 
 .about-footer {
   font-size: 1.1rem;
   color: #555;
+  transition: color 0.3s ease;
 }
 
 .highlight {
@@ -47,12 +49,22 @@
   font-weight: 600;
 }
 
-/* Dark Mode */
 .dark .about-container {
-  background-color: var(--dark-accent);
+  background-color: var(--dark-bg);
   color: var(--dark-text);
+}
+
+.dark .about-subtitle,
+.dark .about-description {
+  color: var(--dark-text);
+}
+
+.dark .about-title,
+.dark .highlight {
+  color: var(--primary-hover);
 }
 
 .dark .about-footer {
   color: #bbb;
 }
+
