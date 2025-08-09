@@ -1,3 +1,4 @@
+import './CartItems.css';
 import { useOutletContext } from "react-router";
 
 function CartItems() {
