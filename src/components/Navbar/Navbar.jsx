@@ -4,7 +4,8 @@ import { GoSun } from "react-icons/go";
 import { FaMoon } from "react-icons/fa";
 import './Navbar.css';
 
-function Navbar({ theme, setTheme }) {
+function Navbar({ theme, setTheme, noOfItems, setNoOfItems }) {
+
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(newTheme);
@@ -29,7 +30,10 @@ function Navbar({ theme, setTheme }) {
       </ul>
 
       <div className="cart-theme">
-        <NavLink to="/cart" className={({ isActive }) => isActive ? "link active-link" : "link" }><FaCartShopping className="cartIcon" /></NavLink>
+        <NavLink to="/cart" className={({ isActive }) => isActive ? "link active-link" : "link"}>
+          <FaCartShopping className="cartIcon" />
+          <p>{noOfItems}</p>
+        </NavLink>
         <p onClick={toggleTheme}>{toggleIcon}</p>
       </div>
     </div>

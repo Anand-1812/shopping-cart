@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
+// Products.jsx
+import { useState, useEffect } from 'react';
+import { useOutletContext } from 'react-router';
 import './Products.css';
 
 function FetchProduct() {
   const [product, setProduct] = useState([]);
+  const { noOfItems, setNoOfItems } = useOutletContext();
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -14,15 +17,18 @@ function FetchProduct() {
     return <p>Loading product...</p>;
   }
 
-  console.log(`Number of products: ${product.length}`)
-
   return (
     <div className="products">
-      {product.map((item) => (
-        <div className="product-info">
-          <img key={item.id} src={item.image} alt={item.title} />
+      {product.map(item => (
+        <div key={item.id} className="product-info">
+          <img src={item.image} alt={item.title} />
           <p className="item-price">${item.price}</p>
-          <button className="cart-btn">Add to cart</button>
+          <button
+            className="cart-btn"
+            onClick={() => setNoOfItems(prev => prev + 1)}
+          >
+            Add to cart
+          </button>
         </div>
       ))}
     </div>
@@ -30,8 +36,6 @@ function FetchProduct() {
 }
 
 export default function Products() {
-  return (
-    <FetchProduct />
-  );
+  return <FetchProduct />;
 }
 
