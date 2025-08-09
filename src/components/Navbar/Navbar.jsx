@@ -32,7 +32,7 @@ function Navbar({ theme, setTheme, noOfItems, setNoOfItems }) {
       <div className="cart-theme">
         <NavLink to="/cart" className={({ isActive }) => isActive ? "link active-link" : "link"}>
           <FaCartShopping className="cartIcon" />
-          <p>{noOfItems}</p>
+          {noOfItems > 0 && <p>{noOfItems}</p>}
         </NavLink>
         <p onClick={toggleTheme}>{toggleIcon}</p>
       </div>
