@@ -1,5 +1,6 @@
+
+/* Footer styles (yours, slightly cleaned) */
 .footer {
-  bottom: 0;
   width: 100%;
   padding: 1.5rem 2rem;
   text-align: center;
@@ -8,7 +9,6 @@
   font-size: 1rem;
   transition: background-color 0.3s ease, color 0.3s ease;
   border-top: 1px solid #ccc;
-  margin-top: auto;
 }
 
 .footer p {
