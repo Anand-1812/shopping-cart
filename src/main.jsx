@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider, Navigate } from 'react-router'
 import Home from './components/Home/Home.jsx'
 import About from './components/About/About.jsx'
 import Product from './components/Products/Products.jsx'
-import { CartItems } from './components/CartItems/CartItems.jsx'
+import CartItems from './components/CartItems/CartItems.jsx'
 
 const router = createBrowserRouter([
   {

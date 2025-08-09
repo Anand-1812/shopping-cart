@@ -3,9 +3,9 @@ import { useState, useEffect } from 'react';
 import { useOutletContext } from 'react-router';
 import './Products.css';
 
-function FetchProduct() {
+function Products() {
   const [product, setProduct] = useState([]);
-  const { noOfItems, setNoOfItems } = useOutletContext();
+  const { noOfItems, setNoOfItems, cartItems, setCartItems } = useOutletContext();
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
@@ -17,6 +17,11 @@ function FetchProduct() {
     return <p>Loading product...</p>;
   }
 
+  const handleAddToCartItems = (item) => {
+    setCartItems(prev => [...prev, item]);
+    setNoOfItems(prev => prev + 1);
+  };
+
   return (
     <div className="products">
       {product.map(item => (
@@ -25,7 +30,7 @@ function FetchProduct() {
           <p className="item-price">${item.price}</p>
           <button
             className="cart-btn"
-            onClick={() => setNoOfItems(prev => prev + 1)}
+            onClick={() => handleAddToCartItems(item)}
           >
             Add to cart
           </button>
@@ -35,7 +40,4 @@ function FetchProduct() {
   );
 }
 
-export default function Products() {
-  return <FetchProduct />;
-}
-
+export default Products;
