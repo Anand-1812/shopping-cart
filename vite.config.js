@@ -1,13 +1,16 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
-export default defineConfig({
+export default defineConfig(({ mode }) => ({
   plugins: [react()],
-  base: process.env.VITE_BASE_PATH || "/shopping-cart",
+  base: mode === 'production' ? '/shopping-cart/' : '/',
+  server: {
+    historyApiFallback: true
+  },
   test: {
     globals: true,
     environment: "jsdom",
     setupFiles: './tests/setup.js',
   },
-})
+}))
+
