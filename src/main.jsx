@@ -8,34 +8,25 @@ import About from './components/About/About.jsx'
 import Product from './components/Products/Products.jsx'
 import CartItems from './components/CartItems/CartItems.jsx'
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <App />,
+      children: [
+        { index: true, element: <Navigate to="/home" replace /> },
+        { path: 'home', element: <Home /> },
+        { path: 'about', element: <About /> },
+        { path: 'products', element: <Product /> },
+        { path: 'cart', element: <CartItems /> }
+      ]
+    }
+  ],
   {
-    path: '/',
-    element: <App />,
-    children: [
-      {
-        index: true,
-        element: <Navigate to="/home" replace />
-      },
-      {
-        path: 'home',
-        element: <Home />
-      },
-      {
-        path: '/about',
-        element: <About />
-      },
-      {
-        path: '/products',
-        element: <Product />
-      },
-      {
-        path: '/cart',
-        element: <CartItems /> 
-      }
-    ]
+    basename: import.meta.env.PROD ? '/shopping-cart' : '/',
   }
-]);
+);
+;
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
