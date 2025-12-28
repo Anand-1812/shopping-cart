@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import ProductSkeleton from "@/components/ProductSkeletion"
 
 type Product = {
   id: number
@@ -10,7 +11,7 @@ type Product = {
   images: string[]
 }
 
-// so, this is returing promise of product array
+// returing promise of product array
 const getProducts = async (): Promise<Product[]> => {
   const res = await fetch(
     "https://api.escuelajs.co/api/v1/products?offset=0&limit=4"
@@ -20,10 +21,13 @@ const getProducts = async (): Promise<Product[]> => {
 }
 
 const Home = () => {
-  const [data, setData] = useState<Product[]>([])
+  const [data, setData] = useState<Product[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getProducts().then(setData)
+    getProducts()
+      .then(setData)
+      .finally(() => setLoading(false))
   }, [])
 
   return (
@@ -63,26 +67,60 @@ const Home = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          {data.map((product) => (
-            <div
-              key={product.id}
-              className="rounded-xl border p-4 flex flex-col gap-3"
-            >
-              <img
-                src={product.images?.[0]}
-                alt={product.title}
-                className="h-40 w-full object-cover rounded-lg"
-              />
+          {loading
+            ? Array.from({ length: 4 }).map((_, i) => (
+              <ProductSkeleton key={i} />
+            ))
+            : data.map((product) => (
+              <div
+                key={product.id}
+                className="
+                group rounded-2xl bg-white
+                ring-1 ring-black/5
+                overflow-hidden
+                transition-all duration-300
+                hover:-translate-y-1 hover:shadow-lg
+                "
+              >
+                {/* Image */}
+                <div className="relative h-44 overflow-hidden">
+                  <img
+                    src={product.images?.[0] || '/placeholder.png'}
+                    alt={product.title}
+                    className="
+                    h-full w-full object-cover
+                    transition-transform duration-300
+                    group-hover:scale-105
+                    "
+                  />
+                </div>
 
-              <h3 className="font-medium line-clamp-2">
-                {product.title}
-              </h3>
+                {/* Content */}
+                <div className="p-4 flex flex-col gap-2">
+                  <h3 className="text-sm font-medium text-neutral-800 line-clamp-2">
+                    {product.title}
+                  </h3>
 
-              <p className="text-sm font-semibold text-blue-600 bg-blue-500/10 px-2 py-1 rounded-lg w-fit">
-                ${product.price}
-              </p>
-            </div>
-          ))}
+                  <div className="flex items-center justify-between mt-2">
+                    <span className="text-lg font-semibold text-neutral-900">
+                      ${product.price}
+                    </span>
+
+                    <button
+                      className="
+                      rounded-full px-3 py-1.5
+                      text-xs font-semibold
+                      bg-blue-600 text-white
+                      hover:bg-blue-700
+                      transition
+                      "
+                    >
+                      Add
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
         </div>
       </section>
 

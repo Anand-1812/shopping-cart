@@ -3,38 +3,36 @@ import { ShoppingCart } from "lucide-react"
 
 const Navbar = () => {
   return (
-    <div className="mx-auto fixed left-1/2 -translate-x-1/2 w-full max-w-4xl mt-4 px-4">
+    <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 w-full max-w-4xl px-4">
       <div
         className="
-          flex items-center justify-between
-          rounded-2xl px-6 py-3
-
-          bg-white/30
-          backdrop-blur-xl
-          border border-white/20
-          shadow-lg shadow-black/40
+        flex items-center justify-between
+        rounded-2xl px-6 py-4
+        bg-white/60 backdrop-blur-xl
+        border border-black/10
+        shadow-lg
         "
       >
         {/* Logo */}
         <Link href="/" className="flex items-end gap-1">
-          <h1 className="text-md md:text-3xl font-bold tracking-tight text-glass">
+          <h1 className="text-lg md:text-2xl font-semibold tracking-tight text-neutral-900">
             Shopping
           </h1>
-          <span className="text-sm font-medium text-black/60 mb-1 text-glass-muted">
+          <span className="text-sm font-medium text-neutral-500 mb-0.5">
             .cart
           </span>
         </Link>
 
         {/* Nav */}
         <nav>
-          <ul className="flex items-center gap-6 text-lg font-medium">
+          <ul className="flex items-center gap-6 text-sm md:text-base font-medium">
             <li>
               <Link
                 href="/products"
                 className="
-                  text-black/70 text-glass
-                  hover:text-black
-                  transition-colors
+                text-neutral-600
+                hover:text-neutral-900
+                transition-colors
                 "
               >
                 Products
@@ -45,18 +43,18 @@ const Navbar = () => {
               <Link
                 href="/cart"
                 className="
-                  text-black/70 text-glass-muted
-                  hover:text-black
-                  transition-colors
+                text-neutral-600
+                hover:text-neutral-900
+                transition-colors
                 "
               >
-                <ShoppingCart className="h-6 w-6" />
+                <ShoppingCart className="h-5 w-5" />
               </Link>
             </li>
           </ul>
         </nav>
       </div>
-    </div>
+    </header>
   )
 }
 
