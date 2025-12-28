@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+.text-glass {
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.6);
+}
+
+.text-glass-muted {
+  text-shadow: 0 1px 6px rgba(255, 255, 255, 0.4);
+}
