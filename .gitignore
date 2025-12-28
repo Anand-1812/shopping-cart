@@ -8,6 +8,7 @@ pnpm-debug.log*
 lerna-debug.log*
 .env.development
 .next/*
+.next/dev
 
 .env.development
 node_modules
