@@ -57,9 +57,11 @@ __turbopack_context__.s([
     ()=>__TURBOPACK__default__export__
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$CartContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/context/CartContext.tsx [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react.js [app-ssr] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ProductSkeletion$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/ProductSkeletion.tsx [app-ssr] (ecmascript)");
 'use client';
+;
 ;
 ;
 ;
@@ -71,6 +73,7 @@ const getProducts = async ()=>{
     return res.json();
 };
 const Products = ()=>{
+    const { addToCart } = (0, __TURBOPACK__imported__module__$5b$project$5d2f$context$2f$CartContext$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useCart"])();
     const [products, setProducts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useState"])(true);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["useEffect"])(()=>{
@@ -87,7 +90,7 @@ const Products = ()=>{
                         children: "Products"
                     }, void 0, false, {
                         fileName: "[project]/app/(root)/products/page.tsx",
-                        lineNumber: 40,
+                        lineNumber: 44,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0)),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -95,13 +98,13 @@ const Products = ()=>{
                         children: "Explore our collection of quality items"
                     }, void 0, false, {
                         fileName: "[project]/app/(root)/products/page.tsx",
-                        lineNumber: 43,
+                        lineNumber: 47,
                         columnNumber: 9
                     }, ("TURBOPACK compile-time value", void 0))
                 ]
             }, void 0, true, {
                 fileName: "[project]/app/(root)/products/page.tsx",
-                lineNumber: 39,
+                lineNumber: 43,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0)),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -112,7 +115,7 @@ const Products = ()=>{
                         length: 8
                     }).map((_, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$ProductSkeletion$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {}, i, false, {
                             fileName: "[project]/app/(root)/products/page.tsx",
-                            lineNumber: 53,
+                            lineNumber: 57,
                             columnNumber: 15
                         }, ("TURBOPACK compile-time value", void 0))) : products.map((product)=>{
                         const image = product.images?.find((img)=>img && img.startsWith("http")) || "/placeholder.png";
@@ -127,12 +130,12 @@ const Products = ()=>{
                                         className: " h-full w-full object-cover transition-transform duration-500 sm:group-hover:scale-105 "
                                     }, void 0, false, {
                                         fileName: "[project]/app/(root)/products/page.tsx",
-                                        lineNumber: 74,
+                                        lineNumber: 78,
                                         columnNumber: 21
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/app/(root)/products/page.tsx",
-                                    lineNumber: 73,
+                                    lineNumber: 77,
                                     columnNumber: 19
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -143,7 +146,7 @@ const Products = ()=>{
                                             children: product.title
                                         }, void 0, false, {
                                             fileName: "[project]/app/(root)/products/page.tsx",
-                                            lineNumber: 87,
+                                            lineNumber: 91,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0)),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -157,50 +160,56 @@ const Products = ()=>{
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/app/(root)/products/page.tsx",
-                                                    lineNumber: 92,
+                                                    lineNumber: 96,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0)),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                                                    onClick: ()=>addToCart({
+                                                            id: product.id,
+                                                            title: product.title,
+                                                            price: product.price,
+                                                            quantity: 1
+                                                        }),
                                                     className: "cursor-pointer rounded-full px-4 py-1.5 text-xs sm:text-sm font-semibold bg-blue-600 text-white hover:bg-blue-700 transition sm:opacity-0 sm:group-hover:opacity-100 sm:translate-y-2 sm:group-hover:translate-y-0 ",
                                                     children: "Add"
                                                 }, void 0, false, {
                                                     fileName: "[project]/app/(root)/products/page.tsx",
-                                                    lineNumber: 96,
+                                                    lineNumber: 100,
                                                     columnNumber: 23
                                                 }, ("TURBOPACK compile-time value", void 0))
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/app/(root)/products/page.tsx",
-                                            lineNumber: 91,
+                                            lineNumber: 95,
                                             columnNumber: 21
                                         }, ("TURBOPACK compile-time value", void 0))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/app/(root)/products/page.tsx",
-                                    lineNumber: 86,
+                                    lineNumber: 90,
                                     columnNumber: 19
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, product.id, true, {
                             fileName: "[project]/app/(root)/products/page.tsx",
-                            lineNumber: 62,
+                            lineNumber: 66,
                             columnNumber: 17
                         }, ("TURBOPACK compile-time value", void 0));
                     })
                 }, void 0, false, {
                     fileName: "[project]/app/(root)/products/page.tsx",
-                    lineNumber: 50,
+                    lineNumber: 54,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             }, void 0, false, {
                 fileName: "[project]/app/(root)/products/page.tsx",
-                lineNumber: 49,
+                lineNumber: 53,
                 columnNumber: 7
             }, ("TURBOPACK compile-time value", void 0))
         ]
     }, void 0, true, {
         fileName: "[project]/app/(root)/products/page.tsx",
-        lineNumber: 37,
+        lineNumber: 41,
         columnNumber: 5
     }, ("TURBOPACK compile-time value", void 0));
 };

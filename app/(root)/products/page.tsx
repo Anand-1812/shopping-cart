@@ -1,7 +1,9 @@
 'use client'
 
+import { useCart } from "@/context/CartContext"
 import { useEffect, useState } from "react"
 import ProductSkeleton from "@/components/ProductSkeletion"
+import { title } from "process"
 
 type Product = {
   id: number
@@ -11,6 +13,7 @@ type Product = {
 }
 
 const getProducts = async (): Promise<Product[]> => {
+
   const res = await fetch(
     "https://api.escuelajs.co/api/v1/products?offset=14&limit=20"
   )
@@ -23,6 +26,7 @@ const getProducts = async (): Promise<Product[]> => {
 }
 
 const Products = () => {
+  const { addToCart } = useCart();
   const [products, setProducts] = useState<Product[]>([])
   const [loading, setLoading] = useState(true)
 
@@ -94,6 +98,12 @@ const Products = () => {
                       </span>
 
                       <button
+                        onClick={() => addToCart({
+                          id: product.id,
+                          title: product.title,
+                          price: product.price,
+                          quantity: 1,
+                        })}
                         className="cursor-pointer
                         rounded-full px-4 py-1.5
                         text-xs sm:text-sm font-semibold
