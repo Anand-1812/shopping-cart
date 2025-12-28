@@ -3,7 +3,6 @@
 import { useCart } from "@/context/CartContext"
 import { useEffect, useState } from "react"
 import ProductSkeleton from "@/components/ProductSkeletion"
-import { title } from "process"
 
 type Product = {
   id: number
