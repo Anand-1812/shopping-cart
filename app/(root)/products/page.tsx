@@ -14,7 +14,7 @@ type Product = {
 const getProducts = async (): Promise<Product[]> => {
 
   const res = await fetch(
-    "https://api.escuelajs.co/api/v1/products?offset=14&limit=20"
+    "https://api.escuelajs.co/api/v1/products?offset=0&limit=30"
   )
 
   if (!res.ok) {
